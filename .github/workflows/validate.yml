@@ -1,0 +1,30 @@
+# Ověření formátu feedu. Pouze čte; nic necommituje ani nepublikuje.
+#
+# Pozor: check nad push NEZASTAVÍ publikaci GitHub Pages z větve. Aby validace
+# skutečně chránila produkční feed, používej pull requesty a v ochraně větve
+# main vyžaduj úspěšný tento check před mergem.
+name: Validate feed
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validovat produkční feed
+        run: node scripts/validate-feed.mjs blacklist.txt
+
+      - name: Testy validátoru
+        run: node --test tests/*.test.mjs

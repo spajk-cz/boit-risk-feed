@@ -1,0 +1,5 @@
+﻿# BOIT risk feed v1
+podvod-crlf.example
+
+# komentar
+sub.podvod-crlf.example

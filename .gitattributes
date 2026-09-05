@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Produkční feed se publikuje s LF.
+blacklist.txt text eol=lf
+
+# Testovací fixtures musí zůstat bajt po bajtu, včetně CRLF a UTF-8 BOM.
+# -whitespace, aby git diff --check nehlásil záměrné \r jako koncovou mezeru.
+tests/fixtures/** -text -whitespace

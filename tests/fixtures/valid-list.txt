@@ -1,0 +1,10 @@
+# BOIT risk feed v1
+# Testovací fixture. Domény jsou z rozsahů vyhrazených RFC 2606,
+# nikdy je nevkládej do produkčního blacklist.txt.
+
+podvod.example
+sub.podvod.example
+
+# komentář uprostřed seznamu
+eshop-test.example.com
+xn--pklad-9ta5m.example

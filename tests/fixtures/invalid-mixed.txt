@@ -1,0 +1,7 @@
+# BOIT risk feed v1
+podvod.example
+https://podvod2.example/objednavka?id=1
+www.podvod3.example
+PODVOD4.example
+podvod5.example # doména z hlášení ČOI
+podvod.example
